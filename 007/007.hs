@@ -1,4 +1,4 @@
-res = (filter (\(x,y) -> y == True) $ map isprime [1,3..]) !! 10000
-isprime n = if all (\x -> n `rem` x /= 0) [2..n-1] then (n, True) else (n, False)
+res = (filter isprime [1,3..]) !! 10000
+isprime n = all (\x -> n `rem` x /= 0) [2..n-1]
 
-main = print $ fst res
+main = print res
